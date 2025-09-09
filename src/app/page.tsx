@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react"
+import Footer from "../../componentes/footer";
 
 const faqData = [
   {
@@ -547,6 +548,8 @@ const handleSubmit = async (e: React.FormEvent) => {
           })}
         </div>
       </div>
+
+      <Footer/>
       
     </div>
   );
