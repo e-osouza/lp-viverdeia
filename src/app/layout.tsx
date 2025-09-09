@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "../../componentes/footer";
 import localFont from "next/font/local";
 
 const dmsans = localFont({
@@ -25,7 +23,6 @@ export default function RootLayout({
         className={`${dmsans.className} antialiased`}
       >
         {children}
-        <Footer/>
       </body>
     </html>
   );

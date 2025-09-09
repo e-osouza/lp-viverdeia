@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react"
 
 const faqData = [
@@ -67,8 +68,24 @@ const faqData = [
   },
 ]
 
-export default function Home() {
+function formatPhoneBR(input: string) {
+  const digits = input.replace(/\D/g, "").slice(0, 11);
+  if (digits.length === 0) return "";
+  if (digits.length < 3) {
+    return `(${digits}`;
+  }
+  if (digits.length < 7) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  }
+  if (digits.length < 11) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+  }
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
 
+
+export default function Home() {
+ const router = useRouter();
   const [formData, setFormData] = useState({
     nomeCompleto: "",
     email: "",
@@ -77,11 +94,43 @@ export default function Home() {
     concordaPrivacidade: false,
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Dados do formulário:", formData)
-    // Aqui você pode adicionar a lógica para enviar os dados
-  }
+const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const payload = {
+      event_type: "CONVERSION",
+      event_family: "CDP",
+      payload: {
+        conversion_identifier: "Evento IA Amazônia",
+        name: formData.nomeCompleto,
+        email: formData.email,
+        mobile_phone: formData.whatsapp,
+        cf_perfil: formData.perfil,
+      },
+    };
+
+    try {
+      const response = await fetch(
+        "https://api.rd.services/platform/conversions?api_key=srBBHZMBEsCrQCnbhovlXjDKnpKSfcTcwfdQ",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (response.ok) {
+        // redireciona para /concluido
+      router.push("/concluido");
+      } else {
+        console.error("Erro ao enviar lead:", await response.text());
+      }
+    } catch (error) {
+      console.error("Erro na integração:", error);
+    }
+  };
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({
@@ -324,7 +373,17 @@ export default function Home() {
                   type="tel"
                   placeholder="Contato (WhatsApp):"
                   value={formData.whatsapp}
-                  onChange={(e) => handleInputChange("whatsapp", e.target.value)}
+                  onChange={(e) => {
+                    const formatted = formatPhoneBR(e.target.value);
+                    handleInputChange("whatsapp", formatted);
+                  }}
+                  onPaste={(e) => {
+                    const pasted = (e.clipboardData || (window as any).clipboardData).getData("text");
+                    const formatted = formatPhoneBR(pasted);
+                    e.preventDefault();
+                    handleInputChange("whatsapp", formatted);
+                  }}
+                  inputMode="numeric"
                   className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
                   required
                 />
@@ -426,7 +485,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5"
+                className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 cursor-pointer"
               >Enviar <ArrowRight/>
               </button>
             </form>

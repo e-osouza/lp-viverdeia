@@ -50,3 +50,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.concluido{
+  background-image: url(../../public/bg-hero.jpg);
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+}
