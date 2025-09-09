@@ -1,103 +1,494 @@
+"use client"
+
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react"
+
+const faqData = [
+  {
+    id: 1,
+    question: "1. Preciso ter conhecimento técnico em IA para participar?",
+    answer:
+      "Não. A Imersão é voltada para empresários, gestores e profissionais que querem aprender aplicações práticas de inteligência artificial nos negócios, sem necessidade de programação.",
+  },
+  {
+    id: 2,
+    question: "2. O evento é presencial ou online?",
+    answer:
+      "O evento é 100% presencial, em Manaus, no dia 18 de outubro de 2025, no Quality Hotel.",
+  },
+  {
+    id: 3,
+    question: "3. O que está incluso no ingresso?",
+    answer:
+      "✔ Um dia completo de imersão presencial, Materiais digitais exclusivos, Coffee break incluso, Certificado oficial de participação, Espaço dedicado para networking, Bônus: desconto exclusivo no ingresso do Amazon IA Summit (1 e 2 de dezembro, Vasco Vasques).",
+  },
+  {
+    id: 4,
+    question: "4. Quantas vagas estão disponíveis?",
+    answer:
+      "As vagas são limitadas, recomendamos garantir sua inscrição o quanto antes.",
+  },
+  {
+    id: 5,
+    question: "5. Quem são os palestrantes?",
+    answer:
+      "Rafael Milagre: Diretor de IA na Nalk, professor da ESPM, mentor no G4 AI Academy e fundador do Viver de IA. Yago Martins: Fundador e CEO da Nalk, ex-oficial do Exército, mentor na G4 Educação e vencedor do prêmio Founder do Ano — Growth Awards 2024.",
+  },
+  {
+    id: 6,
+    question: "6. Haverá certificado de participação?",
+    answer:
+      "Sim. Todos os participantes receberão um certificado oficial de conclusão da imersão Viver de IA Experience Amazônia.",
+  },
+  {
+    id: 7,
+    question: "7. Como funciona o pagamento?",
+    answer:
+      "O ingresso pode ser pago à vista ou em até 12x no cartão de crédito.",
+  },
+  {
+    id: 8,
+    question: "8. Para quem a Imersão é indicada?",
+    answer:
+      "Empresários, gestores, profissionais de marketing e vendas e empreendedores digitais que querem aplicar IA de forma prática para ganhar eficiência, captar mais clientes e melhorar resultados.",
+  },
+  {
+    id: 9,
+    question: "9. O que vou aprender na prática?",
+    answer:
+      "Aplicações de IA para marketing, vendas e operações; cases de sucesso; melhores práticas dos especialistas; e conteúdos conectados ao contexto regional para transformar processos e resultados do seu negócio.",
+  },
+  {
+    id: 10,
+    question: "10. O conteúdo é contextualizado para a realidade da Amazônia?",
+    answer:
+      "Sim. O evento foi pensado para o Norte, com foco em oportunidades locais, cases regionais e uma narrativa de transformação digital alinhada ao ecossistema amazônico.",
+  },
+]
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const [formData, setFormData] = useState({
+    nomeCompleto: "",
+    email: "",
+    whatsapp: "",
+    perfil: "",
+    concordaPrivacidade: false,
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Dados do formulário:", formData)
+    // Aqui você pode adicionar a lógica para enviar os dados
+  }
+
+  const handleInputChange = (field: string, value: string | boolean) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }))
+  }
+
+  const [openItem, setOpenItem] = useState<number | null>(null)
+  const toggleItem = (id: number) => {
+    setOpenItem(openItem === id ? null : id)
+  }
+
+  return (
+    <div className="bg-[var(--vdi-bg)] overflow-hidden">
+
+      {/*section hero*/}
+      <div className="section-hero pt-20 md:pt-10">
+        <div className="max-w-[var(--largura)] mx-auto px-5 relative">
+          <div className="img-hero">
+            <Image className="mx-auto !w-[550px]" width={300} height={200} src={"/palestrantes.png"} alt={"Viver de IA"}/>
+          </div>
+          <div className="flex items-center gap-2 absolute top-[-55px] md:top-0 right-5 md:right-10 border-1 border-[var(--azul-neon)] p-2 rounded-lg w-[200px]">
+            <div className="text-white font-bold text-2xl">18/10</div>
+            <div className="block">
+              <h4 className="text-[var(--azul-neon)] font-bold">Quality Hotel</h4>
+              <h5 className="text-white text-[12px] leading-[1.2]">Av. Mário Ypiranga 1090 - Adrianópolis</h5>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <div className="section-hero-p2 mt-[-100px] md:mt-[-150px] relative z-10">
+        <div className="max-w-[var(--largura)] mx-auto px-5 flex flex-wrap md:flex-nowrap justify-center items-start md:items-center gap-5 relative">
+          <div className="flex flex-col items-end text-right text-white w-[45%] md:w-[25%] order-[2]">
+            <h4 className="font-bold text-[var(--azul-neon)]">Rafael Milagre</h4>
+            <h5>Founder Viver de IA</h5>
+          </div>
+          <div className="block text-center w-[100&] md:w-[50%] order-[1] md:order-[2]">
+            <Image className="mx-auto w-[80%]" width={100} height={100} src={"/logo-viverdeia.svg"} alt={"Viver de IA"} />
+            <span className="border-1 border-[var(--azul-neon)] text-white rounded-full px-4 py-1 bg-[#002C2F] mt-2 inline-block">Amazônia</span>
+          </div>
+          <div className="block text-white w-[45%] md:w-[25%] order-[3]">
+            <h4 className="font-bold text-[var(--azul-neon)]">Yago Martins</h4>
+            <h5>CEO & Founder Viver de IA</h5>
+          </div>
+          <Image className="absolute top-0 right-0" src={"/star-w.svg"} alt="star" width={30} height={30}/>
+        </div>
+
+        <div className="max-w-[var(--largura)] mx-auto px-5 text-center mt-15 relative">
+          <h3 className="text-white font-bold text-lg">Imersão de</h3>
+          <h3 className="text-[var(--azul-neon)] text-center text-4xl md:text-8xl font-[600]">Inteligência Artificial</h3>
+          <h3 className="text-white mt-3 font-bold text-2xl">para <span className="text-[var(--azul-neon)]">líderes e empresários</span></h3>
+          <Image className="absolute bottom-[50%] left-0" src={"/star-b.svg"} alt="star" width={30} height={30}/>
+          <a href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto">Compre seu Ingresso <ArrowRight/></a>
+        </div>
+      </div>
+
+      {/*section 2*/}
+      <div className="max-w-[1000px] mx-auto px-5 mt-15">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 border-2 border-[var(--azul-neon)] px-10 md:px-20 py-8 rounded-4xl md:rounded-full bg-[#27677059]">
+          <div className="block border-b-1 md:border-b-0 border-r-0 md:border-r-1 border-[var(--azul-neon)] pb-5 md:pb-0 pr-0 md:pr-2">
+            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias validadas</h3>
+            <h4 className="text-white">que vão alavancar os negócios do Norte do Brasil.</h4>
+          </div>
+          <div className="block border-b-1 md:border-b-0 border-r-0 md:border-r-1 border-[var(--azul-neon)] pb-5 md:pb-0 pr-0 md:pr-2">
+            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias exclusivas</h3>
+            <h4 className="text-white">Criadas para a realidade do Norte do Brasil.</h4>
+          </div>
+          <div className="block">
+            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias exclusivas</h3>
+            <h4 className="text-white">Criadas para a realidade do Norte do Brasil.</h4>
+          </div>
+        </div>
+      </div>
+
+      {/*section 3 video*/}
+      <div className="max-w-[var(--largura)] mx-auto px-5 mt-15 hidden">
+        <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-2 font-bold text-2xl">Empresários e líderes, usem a inteligência artificial para destravar o crescimento, escalar vendas, reduzir custos e tomar decisões.</h3>
+        <h5 className="text-white text-center max-w-[550px] text-md mx-auto">Essa é a oportunidade de transformar seu negócio.</h5>
+
+        <video></video>
+
+        <div className="px-5 py-3 text-white mx-auto table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">A imersão Viver de IA Experience Amazônia traz aplicações estratégicas para mudar o cenário da sua empresa.</div>
+      </div>
+
+      {/*section 4 palestrantes*/}
+      <div className="max-w-[var(--largura)] mx-auto px-5 mt-20 relative">
+      <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-5 font-bold text-2xl">Conheça os mentores da sua jornada no Viver de IA Experience Amazônia</h3>
+        <div className="border-1 border-white rounded-xl p-5 md:p-10 grid grid-cols-3 gap-6 z-10 relative">
+          <div className="block col-span-3 md:col-span-2 order-[2] md:order-[1]">
+            <h3 className="text-[var(--azul-neon)] text-2xl font-bold">Rafael Milagre</h3>
+            <div className="px-5 py-3 text-white mx-auto inline-block my-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full">Uma das maiores referências em IA para negócios no Brasil</div>
+            <ul className="text-white list-disc ml-5">
+              <li>Fundador do VIVER DE IA</li>
+              <li>Diretor de IA na Nalk</li>
+              <li>Mentor no programa G4 AI Academy da G4 Educação</li>
+              <li>Professor de Inteligência Artificial na ESPM</li>
+            </ul>
+            <p className="text-white my-5">Rafael possui formação em soluções no-code para agentes inteligentes em marketing, vendas, RH e operações. Ele já ajudou empresas e alunos a conquistarem contratos de cinco dígitos com aplicações práticas de inteligência artificial.</p>
+            <span className="border-1 border-white text-white rounded-full px-4 py-1 table">+5.000 alunos impactados</span>
+            <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">+200 empresários assessorados</span>
+            <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">+10 anos de experiência em inovação e tecnologia</span>
+          </div>
+
+          <div className="block col-span-3 md:col-span-1 order-[1] md:order-[2]">
+            <Image width={400} height={400} className="!w-[100%] rounded-[40px]" src={"/rafael-milagre.jpg"} alt={"Rafael Milagre"}/>
+          </div>
+          
+          <Image className="absolute top-[20px] right-[-50px]" src={"/star-b.svg"} alt="star" width={40} height={40}/>
+        </div>
+
+        <div className="w-[100%] h-[200px] rounded-[100%] -translate-y-10 absolute left-0 blur-[150px] bg-[#00FFFF4F]"></div>
+
+        <div className="border-1 border-white rounded-xl p-5 md:p-10 grid grid-cols-3 gap-6 mt-8 z-10 relative">
+          <div className="block col-span-3 md:col-span-1">
+            <Image width={400} height={400} className="!w-[100%] rounded-[40px]" src={"/yago-martins.jpg"} alt={"Rafael Milagre"}/>
+          </div>
+          
+          <div className="block col-span-3 md:col-span-2">
+            <h3 className="text-[var(--azul-neon)] text-2xl font-bold">Yago Martins</h3>
+            <div className="px-5 py-3 text-white mx-auto inline-block my-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full">CEO do Viver de IA que transforma dados em resultados</div>
+            <ul className="text-white list-disc ml-5">
+              <li>Fundador e CEO da Nalk</li>
+              <li>Ex-oficial do Exército</li>
+              <li>Mentor na G4 Educação</li>
+              <li>Founder Premiado</li>
+            </ul>
+            <p className="text-white my-5">Yago é referência em growth, dados e vendas com IA. Como produtor de conteúdo, inspira milhares de profissionais a transformarem seus negócios com IA e hoje lidera a construção do maior ecossistema de educação e soluções práticas de IA para empresários e gestores do Brasil.</p>
+            <span className="border-1 border-white text-white rounded-full px-4 py-1 table">+18,5 milhões em vendas geradas (2022)</span>
+            <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">+15 anos de experiência em vendas e liderança</span>
+            <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">Resultados comprovados em múltiplos setores</span>
+          </div>
+
+          <Image className="absolute bottom-[20px] left-[-50px]" src={"/star-w-2.svg"} alt="star" width={40} height={40}/>
+        </div>
+
+        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Reservar minha vaga agora <ArrowRight/></a>
+      </div>
+
+      {/*section 5*/}
+      <div className="max-w-[var(--largura)] mx-auto px-5 mt-20">
+        <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-10">Esta imersão é para você</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
+            <Image className="mx-auto mb-3" src={"/chart.svg"} width={60} height={60} alt="Viver de IA"/>
+            <h3 className="font-bold leading-[1.2] mb-3">Empresário:</h3>
+            <h4 className="text-md leading-[1.2]">Empresário que quer inovar e crescer.</h4>
+          </div>
+          <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
+            <Image className="mx-auto mb-3" src={"/conections.svg"} width={60} height={60} alt="Viver de IA"/>
+            <h3 className="font-bold leading-[1.2] mb-3">Empreendedor:</h3>
+            <h4 className="text-md leading-[1.2]">Empreendedor que quer se posicionar no futuro.</h4>
+          </div>
+          <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
+            <Image className="mx-auto mb-3" src={"/messagens.svg"} width={60} height={60} alt="Viver de IA"/>
+            <h3 className="font-bold leading-[1.2] mb-3">Gestor</h3>
+            <h4 className="text-md leading-[1.2]">Gestor buscando eficiência operacional.</h4>
+          </div>
+          <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
+            <Image className="mx-auto mb-3" src={"/megafone.svg"} width={60} height={60} alt="Viver de IA"/>
+            <h3 className="font-bold leading-[1.2] mb-3">Profissional de marketing, vendas ou operações:</h3>
+            <h4 className="text-md leading-[1.2]">Profissional de marketing, vendas e operações.</h4>
+          </div>
+        </div>
+      </div>
+
+      {/*section 6*/}
+      <div className="section-waves py-20 mt-20 relative">
+        <div className="w-[300px] h-[10px] absolute top-0 bg-[var(--azul-neon)] left-[50%] -translate-x-[50%]"></div>
+          <div className="max-w-[900px] mx-auto px-5">
+          <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-15">Você corre o risco de ficar para trás se não entender o poder da IA.</h3>
+          <div className="flex justify-between mb-3">
+            <h4 className="text-white font-bold text-lg">Dia 18/10</h4>
+            <h4 className="text-[var(--azul-neon)] font-bold text-lg">Quality Hotel</h4>
+          </div>
+          <div className="border-1 border-white px-5 py-15 rounded-xl text-white text-2xl text-center backdrop-blur-md">Você terá acesso aos bastidores do que realmente funciona, <span className="font-bold text-[var(--azul-neon)]">sem teoria, sem enrolação, só resultado prático.</span></div>
+          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 table mx-auto mt-10" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Reservar meu lugar</a>
+        </div>
+      </div>
+
+      {/*section 7*/}
+      <div className="max-w-[var(--largura)] mx-auto px-5 relative mt-20">
+        <h3 className="max-w-[600px] mx-auto text-[var(--azul-neon)] text-center font-bold text-2xl mb-5">Veja tudo o que está incluso na sua inscrição para a imersão Viver de IA Experience Amazônia</h3>
+        <div className="border-1 border-white rounded-2xl p-10 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div className="pb-5">
+            <div className="w-fit text-center relative">
+              <Image className="absolute right-[-25px]" src={"/star-w.svg"} width={15} height={15} alt="star"/>
+              <h3 className="text-white uppercase text-2xl tracking-[3]">Viver <span className="text-[var(--azul-neon)]">de IA</span></h3>
+              <span className="border-1 border-[var(--azul-neon)] text-white text-[10px] rounded-full px-4 py-1 bg-[#002C2F] mb-5 inline-block">Amazônia</span>
+            </div>
+            <ul className="text-white">
+              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Um dia completo de imersão presencial</li>
+              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Materiais digitais exclusivos para aplicar imediatamente</li>
+              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Certificado oficial de participação</li>
+              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Espaço dedicado para networking com empresários e gestores</li>
+            </ul>
+            <div className="bg-[#001B1B] mt-5 rounded-lg text-white p-5 flex items-start gap-2"><Image src={"/star-b.svg"} width={20} height={20} alt="IA"/> Bônus especial: desconto exclusivo na compra do ingresso para o Amazon IA Summit, nos dias 1 e 2 de dezembro, no Centro de Convenções Vasco Vasques</div>
+            <div className="border-t-1 border-white/30 pt-5 mt-5">
+              <h3 className="text-[var(--azul-neon)] font-bold text-xl">12x de <span className="text-4xl">R$103,11</span><span className="font-normal text-white"> ou R$997,00 à vista</span></h3>
+            </div>
+            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Adquirir vip agora <ArrowRight/></a>
+          </div>
+          <div className="flex justify-center">
+            <Image className="!w-[100%] !h-[auto]" src={"/passaportes.png"} width={500} height={500} alt="passaportes"/>
+          </div>
+        </div>
+        <div className="w-[100%] h-[200px] rounded-[100%] top-[50%] translate-y-[-50%] absolute bg-[#00FFFF69] blur-[100px] opacity-[0.5]"></div>
+      </div>
+
+      {/*section 8*/}
+      <div className="max-w-[1100px] px-5 mx-auto mt-20">
+        <h3 className="max-w-[550px] text-[var(--azul-neon)] font-bold text-2xl mb-10">Confirme sua presença no evento que vai acelerar o crescimento do seu negócio com inteligência artificial</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="form flex items-center">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              {/* infos */}
+              <div className="space-y-2">
+                <input
+                  type="text"
+                  placeholder="Nome completo:"
+                  value={formData.nomeCompleto}
+                  onChange={(e) => handleInputChange("nomeCompleto", e.target.value)}
+                  className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <input
+                  type="email"
+                  placeholder="E-mail:"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
+                  className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <input
+                  type="tel"
+                  placeholder="Contato (WhatsApp):"
+                  value={formData.whatsapp}
+                  onChange={(e) => handleInputChange("whatsapp", e.target.value)}
+                  className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                  required
+                />
+              </div>
+
+              <div className="mb-2 mt-5">
+                <label className="text-white font-medium text-base block mb-2">Você é:</label>
+                <div className="flex flex-wrap gap-3">
+                  <div className="flex items-center space-x-1">
+                    <input
+                      type="radio"
+                      id="empresario"
+                      name="perfil"
+                      value="empresario"
+                      checked={formData.perfil === "empresario"}
+                      onChange={(e) => handleInputChange("perfil", e.target.value)}
+                      className="w-4 h-4 text-cyan-400 bg-transparent border-2 border-cyan-400 focus:ring-cyan-400 focus:ring-2"
+                    />
+                    <label htmlFor="empresario" className="text-white text-sm leading-[1] cursor-pointer">
+                      Empresário
+                    </label>
+                  </div>
+
+                  <div className="flex items-center space-x-1">
+                    <input
+                      type="radio"
+                      id="diretor"
+                      name="perfil"
+                      value="diretor"
+                      checked={formData.perfil === "diretor"}
+                      onChange={(e) => handleInputChange("perfil", e.target.value)}
+                      className="w-4 h-4 text-cyan-400 bg-transparent border-2 border-cyan-400 focus:ring-cyan-400 focus:ring-2"
+                    />
+                    <label htmlFor="diretor" className="text-white text-sm leading-[1] cursor-pointer">
+                      Diretor ou Gestor
+                    </label>
+                  </div>
+
+                  <div className="flex items-center space-x-1">
+                    <input
+                      type="radio"
+                      id="profissional"
+                      name="perfil"
+                      value="profissional"
+                      checked={formData.perfil === "profissional"}
+                      onChange={(e) => handleInputChange("perfil", e.target.value)}
+                      className="w-4 h-4 text-cyan-400 bg-transparent border-2 border-cyan-400 focus:ring-cyan-400 focus:ring-2"
+                    />
+                    <label htmlFor="profissional" className="text-white text-sm leading-[1] cursor-pointer">
+                      Profissional de marketing, vendas e operações
+                    </label>
+                  </div>
+
+                  <div className="flex items-center space-x-1">
+                    <input
+                      type="radio"
+                      id="estudante"
+                      name="perfil"
+                      value="estudante"
+                      checked={formData.perfil === "estudante"}
+                      onChange={(e) => handleInputChange("perfil", e.target.value)}
+                      className="w-4 h-4 text-cyan-400 bg-transparent border-2 border-cyan-400 focus:ring-cyan-400 focus:ring-2"
+                    />
+                    <label htmlFor="estudante" className="text-white text-sm leading-[1] cursor-pointer">
+                      Estudante
+                    </label>
+                  </div>
+
+                  <div className="flex items-center space-x-1">
+                    <input
+                      type="radio"
+                      id="outros"
+                      name="perfil"
+                      value="outros"
+                      checked={formData.perfil === "outros"}
+                      onChange={(e) => handleInputChange("perfil", e.target.value)}
+                      className="w-4 h-4 text-cyan-400 bg-transparent border-2 border-cyan-400 focus:ring-cyan-400 focus:ring-2"
+                    />
+                    <label htmlFor="outros" className="text-white text-sm leading-[1] cursor-pointer">
+                      Outros
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-3 pt-4 border-t border-gray-700">
+                <input
+                  type="checkbox"
+                  id="privacidade"
+                  checked={formData.concordaPrivacidade}
+                  onChange={(e) => handleInputChange("concordaPrivacidade", e.target.checked)}
+                  className="w-4 h-4 text-cyan-400 bg-transparent border-2 border-gray-400 rounded focus:ring-cyan-400 focus:ring-2 mt-1"
+                  required
+                />
+                <label htmlFor="privacidade" className="text-gray-300 text-sm leading-[1.2] cursor-pointer">
+                  Concordo com a Política de Privacidade e com o uso dos meus dados para fins de atendimento e matrícula
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5"
+              >Enviar <ArrowRight/>
+              </button>
+            </form>
+          </div>
+
+          <div className="text-center table mx-auto mt-10 md:mt-0">
+            <Image className='w-[70%] mx-auto' width={500} height={500} src={"/logo-viverdeia.svg"} alt={"Viver de IA"} />
+            <span className="border-1 border-[var(--azul-neon)] text-white text-[20px] rounded-full px-4 py-1 bg-[#002C2F] mt-2 inline-block">Amazônia</span>
+          </div>
+        </div>
+      </div>
+
+      {/* section 9 faq */}
+      <div className="max-w-[800px] px-5 mx-auto mt-20 mb-10 z-10 relative">
+        <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-5">Tire todas as suas dúvidas</h3>
+
+        <div className="space-y-4">
+          {faqData.map((item) => {
+            const isOpen = openItem === item.id
+            return (
+              <div
+                key={item.id}
+                className={`border rounded-lg transition-colors duration-200 ${isOpen ? "bg-[var(--azul-neon)]" : "bg-white"}`}
+              >
+                <button
+                  onClick={() => toggleItem(item.id)}
+                  aria-expanded={isOpen}
+                  className={`w-full px-6 py-4 text-left flex justify-between items-center rounded-lg transition-colors duration-200 cursor-pointer ${
+                    isOpen ? "hover:bg-[var(--azul-neon)]" : "hover:bg-[var(--azul-neon)]"
+                  }`}
+                >
+                  <h3 className={`text-lg font-semibold ${isOpen ? "text-black" : "text-black hover:text-black"}`}>
+                    {item.question}
+                  </h3>
+
+                  <svg
+                    className={`w-5 h-5 transform transition-transform duration-200 ${
+                      isOpen ? "rotate-180 text-green-200" : "text-green-400"
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-4">
+                    <p className={`leading-relaxed ${isOpen ? "text-black" : "text-black"}`}>{item.answer}</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      
     </div>
   );
 }

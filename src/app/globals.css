@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --vdi-bg: #071010;
+  --azul-neon: #00FFFF;
+  --largura: 1240px;
 }
 
 @theme inline {
@@ -23,4 +26,27 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.section-hero {
+  background-image: url(../../public/bg-hero.jpg);
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+}
+.section-hero:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(180deg,rgba(7, 16, 16, 0) 0%, rgba(7, 16, 16, 1) 100%);
+  z-index: 1;
+}
+
+.section-waves {
+  background-image: url(../../public/bg-waves.png);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
