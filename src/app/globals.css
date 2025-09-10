@@ -57,3 +57,10 @@ body {
   background-size: cover;
   position: relative;
 }
+
+.bg-form {
+  background-image: url(../../public/waves.png);
+  background-position: center;
+  background-size :contain;
+  background-repeat: no-repeat !important;
+}

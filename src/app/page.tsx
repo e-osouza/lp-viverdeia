@@ -186,7 +186,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <h3 className="text-[var(--azul-neon)] text-center text-4xl md:text-8xl font-[600]">Inteligência Artificial</h3>
           <h3 className="text-white mt-3 font-bold text-2xl">para <span className="text-[var(--azul-neon)]">líderes e empresários</span></h3>
           <Image className="absolute bottom-[50%] left-0" src={"/star-b.svg"} alt="star" width={30} height={30}/>
-          <a href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto">Compre seu Ingresso <ArrowRight/></a>
+          <a href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto">Compre Agora <ArrowRight/></a>
         </div>
       </div>
 
@@ -269,7 +269,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <Image className="absolute bottom-[20px] left-[-50px]" src={"/star-w-2.svg"} alt="star" width={40} height={40}/>
         </div>
 
-        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Reservar minha vaga agora <ArrowRight/></a>
+        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
       </div>
 
       {/*section 5*/}
@@ -288,7 +288,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           </div>
           <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
             <Image className="mx-auto mb-3" src={"/messagens.svg"} width={60} height={60} alt="Viver de IA"/>
-            <h3 className="font-bold leading-[1.2] mb-3">Gestor</h3>
+            <h3 className="font-bold leading-[1.2] mb-3">Gestor:</h3>
             <h4 className="text-md leading-[1.2]">Gestor buscando eficiência operacional.</h4>
           </div>
           <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
@@ -309,7 +309,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <h4 className="text-[var(--azul-neon)] font-bold text-lg">Quality Hotel</h4>
           </div>
           <div className="border-1 border-white px-5 py-15 rounded-xl text-white text-2xl text-center backdrop-blur-md">Você terá acesso aos bastidores do que realmente funciona, <span className="font-bold text-[var(--azul-neon)]">sem teoria, sem enrolação, só resultado prático.</span></div>
-          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 table mx-auto mt-10" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Reservar meu lugar</a>
+          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
         </div>
       </div>
 
@@ -333,7 +333,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="border-t-1 border-white/30 pt-5 mt-5">
               <h3 className="text-[var(--azul-neon)] font-bold text-xl">12x de <span className="text-4xl">R$103,11</span><span className="font-normal text-white"> ou R$997,00 à vista</span></h3>
             </div>
-            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Adquirir vip agora <ArrowRight/></a>
+            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
           </div>
           <div className="flex justify-center">
             <Image className="!w-[100%] !h-[auto]" src={"/passaportes.png"} width={500} height={500} alt="passaportes"/>
@@ -355,7 +355,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   placeholder="Nome completo:"
                   value={formData.nomeCompleto}
                   onChange={(e) => handleInputChange("nomeCompleto", e.target.value)}
-                  className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                  className="bg-[#FFFFFF1C] w-full border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
                   required
                 />
               </div>
@@ -365,7 +365,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   placeholder="E-mail:"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                  className="w-full bg-[#FFFFFF1C] border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
                   required
                 />
               </div>
@@ -385,14 +385,14 @@ const handleSubmit = async (e: React.FormEvent) => {
                     handleInputChange("whatsapp", formatted);
                   }}
                   inputMode="numeric"
-                  className="w-full bg-transparent border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
+                  className="w-full bg-[#FFFFFF1C] border-white border-1 rounded-lg px-4 py-3 text-white placeholder:text-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
                   required
                 />
               </div>
 
-              <div className="mb-2 mt-5">
+              <div className="mb-2 mt-3 border-1 border-[var(--azul-neon)] p-5 rounded-lg bg-[#FFFFFF1C]">
                 <label className="text-white font-medium text-base block mb-2">Você é:</label>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col flex-wrap gap-3">
                   <div className="flex items-center space-x-1">
                     <input
                       type="radio"
@@ -492,9 +492,9 @@ const handleSubmit = async (e: React.FormEvent) => {
             </form>
           </div>
 
-          <div className="text-center table mx-auto mt-10 md:mt-0">
-            <Image className='w-[70%] mx-auto' width={500} height={500} src={"/logo-viverdeia.svg"} alt={"Viver de IA"} />
-            <span className="border-1 border-[var(--azul-neon)] text-white text-[20px] rounded-full px-4 py-1 bg-[#002C2F] mt-2 inline-block">Amazônia</span>
+          <div className="bg-form text-center flex flex-col justify-center items-center mx-auto mt-10 md:mt-0">
+            <Image className='w-[50%] mx-auto' width={500} height={500} src={"/logo-viverdeia.svg"} alt={"Viver de IA"} />
+            <span className="border-1 border-[var(--azul-neon)] text-white text-[20px] rounded-full px-4 py-1 bg-[#002C2F] mt-2 w-fit">Amazônia</span>
           </div>
         </div>
       </div>
