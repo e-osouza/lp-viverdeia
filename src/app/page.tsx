@@ -23,7 +23,7 @@ const faqData = [
     id: 3,
     question: "3. O que está incluso no ingresso?",
     answer:
-      "Um dia completo de imersão presencial, Materiais digitais exclusivos, Certificado oficial de participação, Espaço dedicado para networking, Bônus: desconto exclusivo no ingresso do Amazon IA Summit (1 e 2 de dezembro, Vasco Vasques).",
+      "Dois dias completos de imersão presencial, Materiais digitais exclusivos, Certificado oficial de participação, Espaço dedicado para networking, Bônus: desconto exclusivo no ingresso do Amazon IA Summit (1 e 2 de dezembro, Vasco Vasques).",
   },
   {
     id: 4,
