@@ -279,22 +279,22 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
             <Image className="mx-auto mb-3" src={"/chart.svg"} width={60} height={60} alt="Viver de IA"/>
             <h3 className="font-bold leading-[1.2] mb-3">Empresário:</h3>
-            <h4 className="text-md leading-[1.2]">Empresário que quer inovar e crescer.</h4>
+            <h4 className="text-md leading-[1.2]">Escalar suas vendas, aumentar o faturamento e tornar o negócio mais competitivo.</h4>
           </div>
           <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
             <Image className="mx-auto mb-3" src={"/conections.svg"} width={60} height={60} alt="Viver de IA"/>
             <h3 className="font-bold leading-[1.2] mb-3">Empreendedor:</h3>
-            <h4 className="text-md leading-[1.2]">Empreendedor que quer se posicionar no futuro.</h4>
+            <h4 className="text-md leading-[1.2]">Inovar, posicionar sua marca no futuro e sair na frente do mercado.</h4>
           </div>
           <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
             <Image className="mx-auto mb-3" src={"/messagens.svg"} width={60} height={60} alt="Viver de IA"/>
             <h3 className="font-bold leading-[1.2] mb-3">Gestor:</h3>
-            <h4 className="text-md leading-[1.2]">Gestor buscando eficiência operacional.</h4>
+            <h4 className="text-md leading-[1.2]">Automatizar processos, reduzir custos operacionais e melhorar a performance da sua equipe.</h4>
           </div>
           <div className="p-5 text-white text-center bg-[#27677059] rounded-lg">
             <Image className="mx-auto mb-3" src={"/megafone.svg"} width={60} height={60} alt="Viver de IA"/>
             <h3 className="font-bold leading-[1.2] mb-3">Profissional de marketing, vendas ou operações:</h3>
-            <h4 className="text-md leading-[1.2]">Profissional de marketing, vendas e operações.</h4>
+            <h4 className="text-md leading-[1.2]">Ganhar tempo, melhorar resultados e trabalhar com mais eficiência.</h4>
           </div>
         </div>
       </div>
