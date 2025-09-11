@@ -13,8 +13,8 @@ export default function Footer() {
                 </div>
                 <div className='text-white text-center text-sm'>CNPJ: 10.279.661/0001-51 © 2025 Digital Comunicação. Todos os direitos reservados.</div>
                 <div className='flex items-center justify-center md:justify-end'>
-                    <Image src={"/instagram.svg"} width={30} height={30} alt='WhatsApp'/>
-                    <Image src={"/whatsapp.svg"} width={30} height={30} alt='WhatsApp'/>
+                    <a href='' target='_blank'><Image src={"/instagram.svg"} width={30} height={30} alt='WhatsApp'/></a>
+                    <a href='https://chat.whatsapp.com/ITBX0SE1BNz0U1wZGxenf2?mode=ems_copy_t' target='_blank'><Image src={"/whatsapp.svg"} width={30} height={30} alt='WhatsApp'/></a>
                 </div>
             </div>
 

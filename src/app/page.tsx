@@ -194,16 +194,16 @@ const handleSubmit = async (e: React.FormEvent) => {
       <div className="max-w-[1000px] mx-auto px-5 mt-15">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 border-2 border-[var(--azul-neon)] px-10 md:px-20 py-8 rounded-4xl md:rounded-full bg-[#27677059]">
           <div className="block border-b-1 md:border-b-0 border-r-0 md:border-r-1 border-[var(--azul-neon)] pb-5 md:pb-0 pr-0 md:pr-2">
-            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias validadas</h3>
-            <h4 className="text-white">que vão alavancar os negócios do Norte do Brasil.</h4>
+            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias exclusivas</h3>
+            <h4 className="text-white">Criadas para a realidade do Norte do Brasil.</h4>
           </div>
           <div className="block border-b-1 md:border-b-0 border-r-0 md:border-r-1 border-[var(--azul-neon)] pb-5 md:pb-0 pr-0 md:pr-2">
-            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias exclusivas</h3>
-            <h4 className="text-white">Criadas para a realidade do Norte do Brasil.</h4>
+            <h3 className="text-[var(--azul-neon)] font-bold">Uma experiência única</h3>
+            <h4 className="text-white">Ao lado dos criadores do Viver de IA.</h4>
           </div>
           <div className="block">
-            <h3 className="text-[var(--azul-neon)] font-bold">Estratégias exclusivas</h3>
-            <h4 className="text-white">Criadas para a realidade do Norte do Brasil.</h4>
+            <h3 className="text-[var(--azul-neon)] font-bold">Networking direto</h3>
+            <h4 className="text-white">Com empresários que estão liderando a inovação na região.</h4>
           </div>
         </div>
       </div>
