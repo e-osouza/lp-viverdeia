@@ -29,9 +29,12 @@ export default function Home() {
               <Image className='mx-auto md:mx-0' width={120} height={120} src={"/logo-viverdeia.svg"} alt={"Viver de IA"} />
               <span className="border-1 border-[var(--azul-neon)] text-white text-[10px] rounded-full px-4 py-1 bg-[#002C2F] mt-2 inline-block">Amazônia</span>
             </div>
-            <div className="flex items-center gap-2 border-1 border-[var(--azul-neon)] p-2 rounded-lg w-[200px]">
-              <div className="text-white font-bold text-2xl">18/10</div>
-              <div className="block">
+            <div className="flex items-center gap-2 border-1 border-[var(--azul-neon)] p-2 rounded-lg">
+              <div className="block border-r-1 border-[var(--azul-neon)] pr-2 w-[96px] text-center">
+                <div className="text-white font-bold text-2xl">18 e 19</div>
+                <div className="text-[var(--azul-neon)] uppercase text-[12px]">de outubro</div>
+              </div>
+              <div className="block w-[120px]">
                 <h4 className="text-[var(--azul-neon)] font-bold">Quality Hotel</h4>
                 <h5 className="text-white text-[12px] leading-[1.2]">Av. Mário Ypiranga 1090 - Adrianópolis</h5>
               </div>

@@ -17,13 +17,13 @@ const faqData = [
     id: 2,
     question: "2. O evento é presencial ou online?",
     answer:
-      "O evento é 100% presencial, em Manaus, no dia 18 de outubro de 2025, no Quality Hotel.",
+      "O evento é 100% presencial, em Manaus, nos dias 18 e 19 de outubro de 2025, no Quality Hotel.",
   },
   {
     id: 3,
     question: "3. O que está incluso no ingresso?",
     answer:
-      "✔ Um dia completo de imersão presencial, Materiais digitais exclusivos, Coffee break incluso, Certificado oficial de participação, Espaço dedicado para networking, Bônus: desconto exclusivo no ingresso do Amazon IA Summit (1 e 2 de dezembro, Vasco Vasques).",
+      "Um dia completo de imersão presencial, Materiais digitais exclusivos, Certificado oficial de participação, Espaço dedicado para networking, Bônus: desconto exclusivo no ingresso do Amazon IA Summit (1 e 2 de dezembro, Vasco Vasques).",
   },
   {
     id: 4,
@@ -154,9 +154,12 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="img-hero">
             <Image className="mx-auto !w-[550px]" width={300} height={200} src={"/palestrantes.png"} alt={"Viver de IA"}/>
           </div>
-          <div className="flex items-center gap-2 absolute top-[-55px] md:top-0 right-5 md:right-10 border-1 border-[var(--azul-neon)] p-2 rounded-lg w-[200px]">
-            <div className="text-white font-bold text-2xl">18/10</div>
-            <div className="block">
+          <div className="flex items-center gap-2 absolute top-[-55px] md:top-0 right-5 md:right-10 border-1 border-[var(--azul-neon)] p-2 rounded-lg">
+            <div className="block border-r-1 border-[var(--azul-neon)] pr-2 w-[96px] text-center">
+              <div className="text-white font-bold text-2xl">18 e 19</div>
+              <div className="text-[var(--azul-neon)] uppercase text-[12px]">de outubro</div>
+            </div>
+            <div className="block w-[120px]">
               <h4 className="text-[var(--azul-neon)] font-bold">Quality Hotel</h4>
               <h5 className="text-white text-[12px] leading-[1.2]">Av. Mário Ypiranga 1090 - Adrianópolis</h5>
             </div>
@@ -186,7 +189,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <h3 className="text-[var(--azul-neon)] text-center text-4xl md:text-8xl font-[600]">Inteligência Artificial</h3>
           <h3 className="text-white mt-3 font-bold text-2xl">para <span className="text-[var(--azul-neon)]">líderes e empresários</span></h3>
           <Image className="absolute bottom-[50%] left-0" src={"/star-b.svg"} alt="star" width={30} height={30}/>
-          <a href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto">Compre Agora <ArrowRight/></a>
+          <a href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto text-black">Compre Agora <ArrowRight/></a>
         </div>
       </div>
 
@@ -195,15 +198,15 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 border-2 border-[var(--azul-neon)] px-10 md:px-20 py-8 rounded-4xl md:rounded-full bg-[#27677059]">
           <div className="block border-b-1 md:border-b-0 border-r-0 md:border-r-1 border-[var(--azul-neon)] pb-5 md:pb-0 pr-0 md:pr-2">
             <h3 className="text-[var(--azul-neon)] font-bold">Estratégias exclusivas</h3>
-            <h4 className="text-white">Criadas para a realidade do Norte do Brasil.</h4>
+            <h4 className="text-white">que vão alavancar os negócios do Norte do Brasil.</h4>
           </div>
           <div className="block border-b-1 md:border-b-0 border-r-0 md:border-r-1 border-[var(--azul-neon)] pb-5 md:pb-0 pr-0 md:pr-2">
             <h3 className="text-[var(--azul-neon)] font-bold">Uma experiência única</h3>
-            <h4 className="text-white">Ao lado dos criadores do Viver de IA.</h4>
+            <h4 className="text-white">ao lado dos criadores do Viver de IA.</h4>
           </div>
           <div className="block">
             <h3 className="text-[var(--azul-neon)] font-bold">Networking direto</h3>
-            <h4 className="text-white">Com empresários que estão liderando a inovação na região.</h4>
+            <h4 className="text-white">com empresários que estão liderando a inovação na região.</h4>
           </div>
         </div>
       </div>
@@ -235,6 +238,8 @@ const handleSubmit = async (e: React.FormEvent) => {
             <span className="border-1 border-white text-white rounded-full px-4 py-1 table">+5.000 alunos impactados</span>
             <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">+200 empresários assessorados</span>
             <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">+10 anos de experiência em inovação e tecnologia</span>
+
+            <Image className="mt-5" src={"/logos.svg"} width={300} height={200} alt="logo"/>
           </div>
 
           <div className="block col-span-3 md:col-span-1 order-[1] md:order-[2]">
@@ -264,12 +269,14 @@ const handleSubmit = async (e: React.FormEvent) => {
             <span className="border-1 border-white text-white rounded-full px-4 py-1 table">+18,5 milhões em vendas geradas (2022)</span>
             <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">+15 anos de experiência em vendas e liderança</span>
             <span className="border-1 border-white text-white rounded-full px-4 py-1 mt-4 table">Resultados comprovados em múltiplos setores</span>
+
+            <Image className="mt-5" src={"/logos.svg"} width={300} height={200} alt="logo"/>
           </div>
 
           <Image className="absolute bottom-[20px] left-[-50px]" src={"/star-w-2.svg"} alt="star" width={40} height={40}/>
         </div>
 
-        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
+        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
       </div>
 
       {/*section 5*/}
@@ -305,15 +312,15 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="max-w-[900px] mx-auto px-5">
           <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-15">Você corre o risco de ficar para trás se não entender o poder da IA.</h3>
           <div className="flex justify-between mb-3">
-            <h4 className="text-white font-bold text-lg">Dia 18/10</h4>
+            <h4 className="text-white font-bold text-lg">Dias 18 e 19 de Outubro</h4>
             <h4 className="text-[var(--azul-neon)] font-bold text-lg">Quality Hotel</h4>
           </div>
           <div className="border-1 border-white px-5 py-15 rounded-xl text-white text-2xl text-center backdrop-blur-md">Você terá acesso aos bastidores do que realmente funciona, <span className="font-bold text-[var(--azul-neon)]">sem teoria, sem enrolação, só resultado prático.</span></div>
-          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
+          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
         </div>
       </div>
 
-      {/*section 7*/}
+      {/*section 7 preço*/}
       <div className="max-w-[var(--largura)] mx-auto px-5 relative mt-20">
         <h3 className="max-w-[600px] mx-auto text-[var(--azul-neon)] text-center font-bold text-2xl mb-5">Veja tudo o que está incluso na sua inscrição para a imersão Viver de IA Experience Amazônia</h3>
         <div className="border-1 border-white rounded-2xl p-10 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -324,16 +331,16 @@ const handleSubmit = async (e: React.FormEvent) => {
               <span className="border-1 border-[var(--azul-neon)] text-white text-[10px] rounded-full px-4 py-1 bg-[#002C2F] mb-5 inline-block">Amazônia</span>
             </div>
             <ul className="text-white">
-              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Um dia completo de imersão presencial</li>
+              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Dois dias completos de imersão presencial</li>
               <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Materiais digitais exclusivos para aplicar imediatamente</li>
               <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Certificado oficial de participação</li>
               <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Espaço dedicado para networking com empresários e gestores</li>
             </ul>
             <div className="bg-[#001B1B] mt-5 rounded-lg text-white p-5 flex items-start gap-2"><Image src={"/star-b.svg"} width={20} height={20} alt="IA"/> Bônus especial: desconto exclusivo na compra do ingresso para o Amazon IA Summit, nos dias 1 e 2 de dezembro, no Centro de Convenções Vasco Vasques</div>
             <div className="border-t-1 border-white/30 pt-5 mt-5">
-              <h3 className="text-[var(--azul-neon)] font-bold text-xl">12x de <span className="text-4xl">R$103,11</span><span className="font-normal text-white"> ou R$997,00 à vista</span></h3>
+              <h3 className="text-[var(--azul-neon)] font-bold text-xl"><span className="text-4xl">R$997,00</span><span className="font-normal text-white"> à vista ou 12x de R$103,11</span></h3>
             </div>
-            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
+            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
           </div>
           <div className="flex justify-center">
             <Image className="!w-[100%] !h-[auto]" src={"/passaportes.png"} width={500} height={500} alt="passaportes"/>
