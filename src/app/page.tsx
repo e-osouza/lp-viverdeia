@@ -343,7 +343,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
           </div>
           <div className="flex justify-center">
-            <Image className="!w-[100%] !h-[auto]" src={"/passaportes.png"} width={500} height={500} alt="passaportes"/>
+            <Image className="!w-[100%] !h-[auto]" src={"/passaporte.png"} width={500} height={500} alt="passaportes"/>
           </div>
         </div>
         <div className="w-[100%] h-[200px] rounded-[100%] top-[50%] translate-y-[-50%] absolute bg-[#00FFFF69] blur-[100px] opacity-[0.5]"></div>
