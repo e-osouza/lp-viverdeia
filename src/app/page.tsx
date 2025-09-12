@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react"
 import Footer from "../../componentes/footer";
+import Script from "next/script";
 
 const faqData = [
   {
@@ -213,14 +214,42 @@ const handleSubmit = async (e: React.FormEvent) => {
       </div>
 
       {/*section 3 video*/}
-      <div className="max-w-[var(--largura)] mx-auto px-5 mt-15 hidden">
-        <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-2 font-bold text-2xl">Empresários e líderes, usem a inteligência artificial para destravar o crescimento, escalar vendas, reduzir custos e tomar decisões.</h3>
-        <h5 className="text-white text-center max-w-[550px] text-md mx-auto">Essa é a oportunidade de transformar seu negócio.</h5>
+      <div className="max-w-[var(--largura)] mx-auto px-5 mt-15 ">
+  <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-2 font-bold text-2xl">
+    Empresários e líderes, usem a inteligência artificial para destravar o crescimento, escalar vendas, reduzir custos e tomar decisões.
+  </h3>
+  <h5 className="text-white text-center max-w-[550px] text-md mx-auto">
+    Essa é a oportunidade de transformar seu negócio.
+  </h5>
 
-        <video></video>
-
-        <div className="px-5 py-3 text-white mx-auto table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">A imersão Viver de IA Experience Amazônia traz aplicações estratégicas para mudar o cenário da sua empresa.</div>
+  {/* Wrapper para centralizar */}
+  <div className="flex justify-center">
+    <div className="w-full md:w-[64%] overflow-hidden col-span-4 rounded-lg">
+      <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+        <iframe
+          src="https://player.vimeo.com/video/1118237056?badge=0&autopause=0&player_id=0&app_id=58479"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+          title="VT_TEASER AMAZON IA - VEICULACAO"
+        ></iframe>
+        <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
       </div>
+    </div>
+  </div>
+
+  <div className="px-5 py-3 text-white mx-auto table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
+    A imersão Viver de IA Experience Amazônia traz aplicações estratégicas para mudar o cenário da sua empresa.
+  </div>
+</div>
+
 
       {/*section 4 palestrantes*/}
       <div className="max-w-[var(--largura)] mx-auto px-5 mt-20 relative">
