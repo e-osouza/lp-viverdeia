@@ -97,7 +97,7 @@ export default function Home() {
 
 const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    alert(formData.perfil)
     const payload = {
       event_type: "CONVERSION",
       event_family: "CDP",
@@ -106,13 +106,13 @@ const handleSubmit = async (e: React.FormEvent) => {
         name: formData.nomeCompleto,
         email: formData.email,
         mobile_phone: formData.whatsapp,
-        cf_perfil: formData.perfil,
+        cf_voce_e: formData.perfil,
       },
     };
 
     try {
       const response = await fetch(
-        "https://api.rd.services/platform/conversions?api_key=srBBHZMBEsCrQCnbhovlXjDKnpKSfcTcwfdQ",
+        `https://api.rd.services/platform/conversions?api_key=srBBHZMBEsCrQCnbhovlXjDKnpKSfcTcwfdQ`,
         {
           method: "POST",
           headers: {
@@ -124,7 +124,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
       if (response.ok) {
         // redireciona para /concluido
-        console.log(response)
+     alert(formData.perfil)
       router.push("https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945");
       } else {
         console.error("Erro ao enviar lead:", await response.text());
