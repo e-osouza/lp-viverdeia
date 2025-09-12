@@ -124,7 +124,8 @@ const handleSubmit = async (e: React.FormEvent) => {
 
       if (response.ok) {
         // redireciona para /concluido
-      router.push("/concluido");
+        console.log(response)
+      router.push("https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945");
       } else {
         console.error("Erro ao enviar lead:", await response.text());
       }
@@ -189,7 +190,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <h3 className="text-[var(--azul-neon)] text-center text-4xl md:text-8xl font-[600]">Inteligência Artificial</h3>
           <h3 className="text-white mt-3 font-bold text-2xl">para <span className="text-[var(--azul-neon)]">líderes e empresários</span></h3>
           <Image className="absolute bottom-[50%] left-0" src={"/star-b.svg"} alt="star" width={30} height={30}/>
-          <a href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto text-black">Compre Agora <ArrowRight/></a>
+          <a href="#formulario" className="bg-[var(--azul-neon)] rounded-full uppercase font-bold px-5 py-3 flex gap-2 justify-center mt-8 w-fit mx-auto text-black">Compre Agora <ArrowRight/></a>
         </div>
       </div>
 
@@ -276,7 +277,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <Image className="absolute bottom-[20px] left-[-50px]" src={"/star-w-2.svg"} alt="star" width={40} height={40}/>
         </div>
 
-        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
+        <a className="bg-[var(--azul-neon)] mx-auto rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="#formulario">Compre Agora <ArrowRight/></a>
       </div>
 
       {/*section 5*/}
@@ -316,7 +317,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <h4 className="text-[var(--azul-neon)] font-bold text-lg">Quality Hotel</h4>
           </div>
           <div className="border-1 border-white px-5 py-15 rounded-xl text-white text-2xl text-center backdrop-blur-md">Você terá acesso aos bastidores do que realmente funciona, <span className="font-bold text-[var(--azul-neon)]">sem teoria, sem enrolação, só resultado prático.</span></div>
-          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
+          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto text-black" href="#formulario">Compre Agora <ArrowRight/></a>
         </div>
       </div>
 
@@ -340,7 +341,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="border-t-1 border-white/30 pt-5 mt-5">
               <h3 className="text-[var(--azul-neon)] font-bold text-xl"><span className="text-4xl">R$997,00</span><span className="font-normal text-white"> à vista ou 12x de R$103,11</span></h3>
             </div>
-            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945" target="_blank">Compre Agora <ArrowRight/></a>
+            <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="#formulario">Compre Agora <ArrowRight/></a>
           </div>
           <div className="flex justify-center">
             <Image className="!w-[100%] !h-[auto]" src={"/passaporte.png"} width={500} height={500} alt="passaportes"/>
@@ -350,7 +351,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       </div>
 
       {/*section 8*/}
-      <div className="max-w-[1100px] px-5 mx-auto mt-20">
+      <div id="formulario" className="max-w-[1100px] px-5 mx-auto pt-20">
         <h3 className="max-w-[550px] text-[var(--azul-neon)] font-bold text-2xl mb-10">Confirme sua presença no evento que vai acelerar o crescimento do seu negócio com inteligência artificial</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="form flex items-center">
