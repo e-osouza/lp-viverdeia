@@ -17,7 +17,7 @@ const faqData = [
     id: 2,
     question: "2. O evento é presencial ou online?",
     answer:
-      "O evento é 100% presencial, em Manaus, nos dias 18 e 19 de outubro de 2025, no Quality Hotel.",
+      "O evento é 100% presencial, em Manaus, nos dias 18 e 19 de outubro de 2025.",
   },
   {
     id: 3,
@@ -106,7 +106,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         name: formData.nomeCompleto,
         email: formData.email,
         mobile_phone: formData.whatsapp,
-        cf_voce_e: formData.perfil,
+        cf_profissao: formData.perfil,
       },
     };
 
@@ -156,11 +156,11 @@ const handleSubmit = async (e: React.FormEvent) => {
             <Image className="mx-auto !w-[550px]" width={300} height={200} src={"/palestrantes.png"} alt={"Viver de IA"}/>
           </div>
           <div className="flex items-center gap-2 absolute top-[-55px] md:top-0 right-5 md:right-10 border-1 border-[var(--azul-neon)] p-2 rounded-lg">
-            <div className="block border-r-1 border-[var(--azul-neon)] pr-2 w-[96px] text-center">
+            <div className="w-[96px] text-center">
               <div className="text-white font-bold text-2xl">18 e 19</div>
               <div className="text-[var(--azul-neon)] uppercase text-[12px]">de outubro</div>
             </div>
-            <div className="block w-[120px]">
+            <div className="block w-[120px] block border-l-1 border-[var(--azul-neon)] pl-2 hidden">
               <h4 className="text-[var(--azul-neon)] font-bold">Quality Hotel</h4>
               <h5 className="text-white text-[12px] leading-[1.2]">Av. Mário Ypiranga 1090 - Adrianópolis</h5>
             </div>
@@ -314,7 +314,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-15">Você corre o risco de ficar para trás se não entender o poder da IA.</h3>
           <div className="flex justify-between mb-3">
             <h4 className="text-white font-bold text-lg">Dias 18 e 19 de Outubro</h4>
-            <h4 className="text-[var(--azul-neon)] font-bold text-lg">Quality Hotel</h4>
+            <h4 className="text-[var(--azul-neon)] font-bold text-lg hidden">Quality Hotel</h4>
           </div>
           <div className="border-1 border-white px-5 py-15 rounded-xl text-white text-2xl text-center backdrop-blur-md">Você terá acesso aos bastidores do que realmente funciona, <span className="font-bold text-[var(--azul-neon)]">sem teoria, sem enrolação, só resultado prático.</span></div>
           <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto text-black" href="#formulario">Compre Agora <ArrowRight/></a>
