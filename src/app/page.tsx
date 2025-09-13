@@ -272,7 +272,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/*section 3 video*/}
+      {/*section 3 videos*/}
       <div className="max-w-[var(--largura)] mx-auto px-5 mt-15 ">
         <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-2 font-bold text-2xl">
           Empresários e líderes, em dois dias você terá acesso a frameworks práticos para destravar o crescimento do seu negócio.
