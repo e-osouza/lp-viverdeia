@@ -18,7 +18,7 @@ const faqData = [
     id: 2,
     question: "2. O evento é presencial ou online?",
     answer:
-      "O evento é 100% presencial, em Manaus, nos dias 18 e 19 de outubro de 2025.",
+      "O evento é 100% presencial, em Manaus, nos dias 18 e 19 de outubro de 2025 no Quality Hotel.",
   },
   {
     id: 3,
@@ -161,7 +161,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <div className="text-white font-bold text-2xl">18 e 19</div>
               <div className="text-[var(--azul-neon)] uppercase text-[12px]">de outubro</div>
             </div>
-            <div className="block w-[120px] block border-l-1 border-[var(--azul-neon)] pl-2 hidden">
+            <div className="block w-[120px] block border-l-1 border-[var(--azul-neon)] pl-2">
               <h4 className="text-[var(--azul-neon)] font-bold">Quality Hotel</h4>
               <h5 className="text-white text-[12px] leading-[1.2]">Av. Mário Ypiranga 1090 - Adrianópolis</h5>
             </div>
@@ -215,40 +215,47 @@ const handleSubmit = async (e: React.FormEvent) => {
 
       {/*section 3 video*/}
       <div className="max-w-[var(--largura)] mx-auto px-5 mt-15 ">
-  <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-2 font-bold text-2xl">
-    Empresários e líderes, usem a inteligência artificial para destravar o crescimento, escalar vendas, reduzir custos e tomar decisões.
-  </h3>
-  <h5 className="text-white text-center max-w-[550px] text-md mx-auto">
-    Essa é a oportunidade de transformar seu negócio.
-  </h5>
+        <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-2 font-bold text-2xl">
+          Empresários e líderes, em dois dias você terá acesso a frameworks práticos para destravar o crescimento do seu negócio.
+        </h3>
+        <div className="flex justify-center gap-4 mt-4">
+          <div className="px-5 py-2 text-white text-sm leading-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
+            Escalar Vendas
+          </div>
+          <div className="px-5 py-2 text-white text-sm leading-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
+            Reduzir custos
+          </div>
+          <div className="px-5 py-2 text-white text-sm leading-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
+            E aplicar IA com clareza
+          </div>
+        </div>
 
-  {/* Wrapper para centralizar */}
-  <div className="flex justify-center">
-    <div className="w-full md:w-[64%] overflow-hidden col-span-4 rounded-lg">
-      <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-        <iframe
-          src="https://player.vimeo.com/video/1118237056?badge=0&autopause=0&player_id=0&app_id=58479"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-          title="VT_TEASER AMAZON IA - VEICULACAO"
-        ></iframe>
-        <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
+        <div className="flex justify-center my-8">
+          <div className="w-full md:w-[64%] overflow-hidden col-span-4 rounded-lg">
+            <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+              <iframe
+                src="https://player.vimeo.com/video/1118237056?badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+                title="VT_TEASER AMAZON IA - VEICULACAO"
+              ></iframe>
+              <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
+            </div>
+          </div>
+        </div>
+
+        <div className="px-5 py-3 text-white text-sm mx-auto table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
+          A imersão Viver de IA Experience Amazônia traz aplicações estratégicas para mudar o cenário da sua empresa.
+        </div>
       </div>
-    </div>
-  </div>
-
-  <div className="px-5 py-3 text-white mx-auto table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
-    A imersão Viver de IA Experience Amazônia traz aplicações estratégicas para mudar o cenário da sua empresa.
-  </div>
-</div>
 
 
       {/*section 4 palestrantes*/}
@@ -343,7 +350,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-15">Você corre o risco de ficar para trás se não entender o poder da IA.</h3>
           <div className="flex justify-between mb-3">
             <h4 className="text-white font-bold text-lg">Dias 18 e 19 de Outubro</h4>
-            <h4 className="text-[var(--azul-neon)] font-bold text-lg hidden">Quality Hotel</h4>
+            <h4 className="text-[var(--azul-neon)] font-bold text-lg">Quality Hotel</h4>
           </div>
           <div className="border-1 border-white px-5 py-15 rounded-xl text-white text-2xl text-center backdrop-blur-md">Você terá acesso aos bastidores do que realmente funciona, <span className="font-bold text-[var(--azul-neon)]">sem teoria, sem enrolação, só resultado prático.</span></div>
           <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 mx-auto text-black" href="#formulario">Compre Agora <ArrowRight/></a>
