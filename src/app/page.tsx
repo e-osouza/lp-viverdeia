@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react"
 import Footer from "../../componentes/footer";
 import Script from "next/script";
+import { dlPush } from "../../componentes/dataLayer";
 
 const faqData = [
   {
@@ -70,9 +71,12 @@ const faqData = [
   },
 ]
 
+// Supondo que você tenha estas funções no mesmo arquivo ou importadas:
 function formatPhoneBR(input: string) {
   const digits = input.replace(/\D/g, "").slice(0, 11);
+
   if (digits.length === 0) return "";
+
   if (digits.length < 3) {
     return `(${digits}`;
   }
@@ -85,9 +89,14 @@ function formatPhoneBR(input: string) {
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
 
+function getPhoneForSubmit(input: string) {
+  const digits = input.replace(/\D/g, "").slice(0, 11);
+  return digits ? `+55${digits}` : "";
+}
+
 
 export default function Home() {
- const router = useRouter();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     nomeCompleto: "",
     email: "",
@@ -96,9 +105,32 @@ export default function Home() {
     concordaPrivacidade: false,
   })
 
-const handleSubmit = async (e: React.FormEvent) => {
+  // ⬇️ handleSubmit com validação + dataLayer
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(formData.perfil)
+
+    // garante que só dispara se tudo estiver preenchido
+    const isValid =
+      formData.nomeCompleto.trim() &&
+      formData.email.trim() &&
+      formData.whatsapp.trim() &&
+      formData.perfil &&
+      formData.concordaPrivacidade;
+
+    if (isValid) {
+      dlPush({
+        event: "form_ready_to_submit",
+        form_name: "confirmacao_imersao_viver_de_ia",
+        nome: formData.nomeCompleto,
+        email: formData.email,
+        whatsapp: formData.whatsapp,
+        perfil: formData.perfil,
+      });
+      if (typeof window !== "undefined") {
+        console.info("✅ form_ready_to_submit disparado");
+      }
+    }
+
     const payload = {
       event_type: "CONVERSION",
       event_family: "CDP",
@@ -122,15 +154,34 @@ const handleSubmit = async (e: React.FormEvent) => {
           body: JSON.stringify(payload),
         }
       );
-
+    
       if (response.ok) {
-        // redireciona para /concluido
-     alert(formData.perfil)
-      router.push("https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945");
+        dlPush({
+          event: "form_submit_success",
+          form_name: "confirmacao_imersao_viver_de_ia",
+        });
+    
+        // abre em nova aba
+        window.open(
+          "https://www.sympla.com.br/evento/imersao-viver-de-ia-experience-amazonia/3114945",
+          "_blank"
+        );
+    
+        // alert(formData.perfil) // opcional
       } else {
+        dlPush({
+          event: "form_submit_error",
+          form_name: "confirmacao_imersao_viver_de_ia",
+          status: response.status,
+        });
         console.error("Erro ao enviar lead:", await response.text());
       }
     } catch (error) {
+      dlPush({
+        event: "form_submit_exception",
+        form_name: "confirmacao_imersao_viver_de_ia",
+        error_type: "exception",
+      });
       console.error("Erro na integração:", error);
     }
   };
@@ -144,7 +195,15 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   const [openItem, setOpenItem] = useState<number | null>(null)
   const toggleItem = (id: number) => {
-    setOpenItem(openItem === id ? null : id)
+    const willOpen = openItem !== id;
+    setOpenItem(willOpen ? id : null);
+
+    // 👇 Evento de interação no FAQ (opcional, mas útil)
+    dlPush({
+      event: "faq_toggle",
+      faq_id: id,
+      is_open: willOpen,
+    });
   }
 
   return (
@@ -386,7 +445,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="w-[100%] h-[200px] rounded-[100%] top-[50%] translate-y-[-50%] absolute bg-[#00FFFF69] blur-[100px] opacity-[0.5]"></div>
       </div>
 
-      {/*section 8*/}
+      {/*section formulario 8*/}
       <div id="formulario" className="max-w-[1100px] px-5 mx-auto pt-20">
         <h3 className="max-w-[550px] text-[var(--azul-neon)] font-bold text-2xl mb-10">Confirme sua presença no evento que vai acelerar o crescimento do seu negócio com inteligência artificial</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
