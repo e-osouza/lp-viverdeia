@@ -105,7 +105,7 @@ export default function Home() {
     concordaPrivacidade: false,
   })
 
-  // ⬇️ handleSubmit com validação + dataLayer
+  // handleSubmit com validação + dataLayer
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -416,7 +416,61 @@ export default function Home() {
         </div>
       </div>
 
-      {/*section 7 preço*/}
+      {/*section 7 programacao*/}
+      <div className="max-w-[var(--largura)] mx-auto px-5 relative mt-20">
+        <h3 className="max-w-[500px] mx-auto text-[var(--azul-neon)] text-center font-bold text-2xl mb-10">Dois dias completo de aprendizado intensivo com conteúdo 100% prático</h3>
+        <div className="px-8 py-1 text-white text-sm mx-auto mb-8 table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
+          Dia 18/10
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+            <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">08h00 – 00h09</span>
+            <p className="text-white font-bold text-sm">Coffee Break de recepção (1h)</p>
+          </div>
+          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+            <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">09h00 – 09h30</span>
+            <p className="text-white font-bold text-sm mb-2">1. Pensamento estratégico com IA</p>
+            <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
+          </div>
+          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+            <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">09h30 – 09h50</span>
+            <p className="text-white font-bold text-sm mb-2">2. Framework de IA</p>
+            <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
+          </div>
+          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+            <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">09h50 – 10h40</span>
+            <p className="text-white font-bold text-sm mb-2">3. Jornada de aquisição com IA</p>
+            <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
+          </div>
+          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+            <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">10h40 – 11h00</span>
+            <p className="text-white font-bold text-sm mb-2">Q&A com fundadores</p>
+            <div className="block">
+              <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
+              <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
+            </div>
+          </div>
+          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+            <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">11h00 – 11h50</span>
+            <p className="text-white font-bold text-sm mb-2">4. Agente de atendimento e vendas – Nina IA</p>
+            <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
+          </div>
+        </div>
+
+        <div className="flex justify-center gap-5">
+          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-8 py-3 flex mt-5 text-black" href="#formulario">Compre Agora <ArrowRight/></a>
+          <a className=" border-2 border-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-8 py-3 flex mt-5 text-white" href="/programacao">Ver Todas<ArrowRight/></a>
+        </div>
+      </div>
+
+      {/*section 8 preço*/}
       <div className="max-w-[var(--largura)] mx-auto px-5 relative mt-20">
         <h3 className="max-w-[600px] mx-auto text-[var(--azul-neon)] text-center font-bold text-2xl mb-5">Veja tudo o que está incluso na sua inscrição para a imersão Viver de IA Experience Amazônia</h3>
         <div className="border-1 border-white rounded-2xl p-10 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -445,7 +499,7 @@ export default function Home() {
         <div className="w-[100%] h-[200px] rounded-[100%] top-[50%] translate-y-[-50%] absolute bg-[#00FFFF69] blur-[100px] opacity-[0.5]"></div>
       </div>
 
-      {/*section formulario 8*/}
+      {/*section formulario 9*/}
       <div id="formulario" className="max-w-[1100px] px-5 mx-auto pt-20">
         <h3 className="max-w-[550px] text-[var(--azul-neon)] font-bold text-2xl mb-10">Confirme sua presença no evento que vai acelerar o crescimento do seu negócio com inteligência artificial</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -602,7 +656,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* section 9 faq */}
+      {/* section 10 faq */}
       <div className="max-w-[800px] px-5 mx-auto mt-20 mb-10 z-10 relative">
         <h3 className="text-[var(--azul-neon)] text-center font-bold text-2xl mb-5">Tire todas as suas dúvidas</h3>
 
