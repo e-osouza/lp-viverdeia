@@ -56,7 +56,7 @@ export default function Programacao() {
                         <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
                         <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">11h00 – 11h50</span>
                         <p className="text-white font-bold text-sm mb-2">4. Agente de atendimento e vendas – Nina IA</p>
-                        <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
+                        <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
                     </div>
                 </div>
                 <div className="bg-[#2767702B] mt-3 md:mt-5 px-5 py-10 rounded-lg text-center">
@@ -184,7 +184,7 @@ export default function Programacao() {
                     <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
                         <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
                         <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">15h44 – 16h14</span>
-                        <p className="text-white font-bold text-sm mb-2">Q&A com fundadores</p>
+                        <p className="text-white font-bold text-sm mb-2">Q&A com CEO Grupo Digital</p>
                         <div className="block">
                             <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
                             <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>

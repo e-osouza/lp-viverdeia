@@ -285,7 +285,7 @@ export default function Home() {
             Reduzir custos
           </div>
           <div className="px-5 py-2 text-white text-sm leading-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
-            E aplicar IA com clareza
+            Aplicar IA com clareza
           </div>
         </div>
 
@@ -426,7 +426,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
-            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">08h00 – 00h09</span>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">08h00 – 09h00</span>
             <p className="text-white font-bold text-sm">Coffee Break de recepção (1h)</p>
           </div>
           <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
@@ -460,7 +460,7 @@ export default function Home() {
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
             <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">11h00 – 11h50</span>
             <p className="text-white font-bold text-sm mb-2">4. Agente de atendimento e vendas – Nina IA</p>
-            <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
+            <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
           </div>
         </div>
 
