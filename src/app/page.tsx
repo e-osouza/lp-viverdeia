@@ -320,7 +320,7 @@ export default function Home() {
       {/*section 4 palestrantes*/}
       <div className="max-w-[var(--largura)] mx-auto px-5 mt-20 relative">
       <h3 className="max-w-[900px] mx-auto text-[var(--azul-neon)] text-center mb-5 font-bold text-2xl">Conheça os mentores da sua jornada no Viver de IA Experience Amazônia</h3>
-        <div className="border-1 border-white rounded-xl p-5 md:p-10 grid grid-cols-3 gap-6 z-10 relative">
+        <div className="bg-[#27677059] rounded-xl p-5 md:p-10 grid grid-cols-3 gap-6 z-10 relative">
           <div className="block col-span-3 md:col-span-2 order-[2] md:order-[1]">
             <h3 className="text-[var(--azul-neon)] text-2xl font-bold">Rafael Milagre</h3>
             <div className="px-5 py-3 text-white mx-auto inline-block my-4 bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full">Uma das maiores referências em IA para negócios no Brasil</div>
@@ -347,7 +347,7 @@ export default function Home() {
 
         <div className="w-[100%] h-[200px] rounded-[100%] -translate-y-10 absolute left-0 blur-[150px] bg-[#00FFFF4F]"></div>
 
-        <div className="border-1 border-white rounded-xl p-5 md:p-10 grid grid-cols-3 gap-6 mt-8 z-10 relative">
+        <div className="bg-[#27677059] rounded-xl p-5 md:p-10 grid grid-cols-3 gap-6 mt-8 z-10 relative">
           <div className="block col-span-3 md:col-span-1">
             <Image width={400} height={400} className="!w-[100%] rounded-[40px]" src={"/yago-martins.jpg"} alt={"Rafael Milagre"}/>
           </div>
@@ -423,40 +423,40 @@ export default function Home() {
           Dia 18/10
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+          <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
-            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">08h00 – 00h09</span>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">08h00 – 00h09</span>
             <p className="text-white font-bold text-sm">Coffee Break de recepção (1h)</p>
           </div>
-          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+          <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
-            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">09h00 – 09h30</span>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">09h00 – 09h30</span>
             <p className="text-white font-bold text-sm mb-2">1. Pensamento estratégico com IA</p>
             <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
           </div>
-          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+          <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
-            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">09h30 – 09h50</span>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">09h30 – 09h50</span>
             <p className="text-white font-bold text-sm mb-2">2. Framework de IA</p>
             <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
           </div>
-          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+          <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
-            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">09h50 – 10h40</span>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">09h50 – 10h40</span>
             <p className="text-white font-bold text-sm mb-2">3. Jornada de aquisição com IA</p>
             <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
           </div>
-          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+          <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
-            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">10h40 – 11h00</span>
+            <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">10h40 – 11h00</span>
             <p className="text-white font-bold text-sm mb-2">Q&A com fundadores</p>
             <div className="block">
               <p className="font-bold text-[var(--azul-neon)] uppercase">Yago Martins</p>
               <p className="font-bold text-[var(--azul-neon)] uppercase">Rafael Milagre</p>
             </div>
           </div>
-          <div className="bg-[#2767702B] px-6 py-10 rounded-lg">
+          <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
             <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
             <span className="bg-[var(--azul-neon)] rounded-full text-sm px-4 py-1 mt-5 mb-4 inline-block">11h00 – 11h50</span>
             <p className="text-white font-bold text-sm mb-2">4. Agente de atendimento e vendas – Nina IA</p>
@@ -464,9 +464,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center gap-5">
-          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-8 py-3 flex mt-5 text-black" href="#formulario">Compre Agora <ArrowRight/></a>
-          <a className=" border-2 border-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-8 py-3 flex mt-5 text-white" href="/programacao">Ver Todas<ArrowRight/></a>
+        <div className="flex justify-center gap-5 flex-wrap md:flex-nowrap mt-5">
+          <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-8 py-3 flex text-black" href="#formulario">Compre Agora <ArrowRight/></a>
+          <a className=" border-2 border-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-8 py-3 flex text-white" href="/programacao">Ver Todas<ArrowRight/></a>
         </div>
       </div>
 
@@ -488,7 +488,7 @@ export default function Home() {
             </ul>
             <div className="bg-[#001B1B] mt-5 rounded-lg text-white p-5 flex items-start gap-2"><Image src={"/star-b.svg"} width={20} height={20} alt="IA"/> Bônus especial: desconto exclusivo na compra do ingresso para o Amazon IA Summit, nos dias 1 e 2 de dezembro, no Centro de Convenções Vasco Vasques</div>
             <div className="border-t-1 border-white/30 pt-5 mt-5">
-              <h3 className="text-[var(--azul-neon)] font-bold text-xl"><span className="text-4xl">R$997,00</span><span className="font-normal text-white"> à vista ou 12x de R$103,11</span></h3>
+              <h3 className="text-[var(--azul-neon)] font-bold text-xl">12x de <span className="text-4xl">R$134,14</span><span className="font-normal text-white"> ou R$1.297,00 à vista</span></h3>
             </div>
             <a className="bg-[var(--azul-neon)] rounded-full uppercase font-bold gap-2 w-fit px-5 py-3 flex mt-5 text-black" href="#formulario">Compre Agora <ArrowRight/></a>
           </div>
@@ -496,7 +496,7 @@ export default function Home() {
             <Image className="!w-[100%] !h-[auto]" src={"/passaporte.png"} width={500} height={500} alt="passaportes"/>
           </div>
         </div>
-        <div className="w-[100%] h-[200px] rounded-[100%] top-[50%] translate-y-[-50%] absolute bg-[#00FFFF69] blur-[100px] opacity-[0.5]"></div>
+        <div className="w-[120%] h-[200px] rounded-[100%] left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] absolute bg-[#00FFFF69] blur-[100px] opacity-[0.5]"></div>
       </div>
 
       {/*section formulario 9*/}

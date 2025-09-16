@@ -55,11 +55,20 @@ body {
   background-repeat: no-repeat;
 }
 
-.concluido{
-  background-image: url(../../public/bg-hero.jpg);
-  background-position: top center;
-  background-size: cover;
+.programacao {
   position: relative;
+}
+.programacao::before {
+  content: '';
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  bottom: -300px;
+  right: -50%;
+  filter: blur(200px);
+  background: #00FFFF69;
+  border-radius: 100%;
+  opacity: 0.5;
 }
 
 .bg-form {
