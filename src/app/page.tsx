@@ -482,11 +482,11 @@ export default function Home() {
             </div>
             <ul className="text-white">
               <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Dois dias completos de imersão presencial</li>
-              <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Materiais digitais exclusivos para aplicar imediatamente</li>
+              <li className="flex items-center gap-2 mb-2 hidden"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Materiais digitais exclusivos para aplicar imediatamente</li>
               <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Certificado oficial de participação</li>
               <li className="flex items-center gap-2 mb-2"><Image src={"/check.svg"} width={18} height={18} alt="IA"/> Espaço dedicado para networking com empresários e gestores</li>
             </ul>
-            <div className="bg-[#001B1B] mt-5 rounded-lg text-white p-5 flex items-start gap-2"><Image src={"/star-b.svg"} width={20} height={20} alt="IA"/> Bônus especial: desconto exclusivo na compra do ingresso para o Amazon IA Summit, nos dias 1 e 2 de dezembro, no Centro de Convenções Vasco Vasques</div>
+            <div className="bg-[#001B1B] mt-5 rounded-lg text-white p-5 flex items-start gap-2 hidden"><Image src={"/star-b.svg"} width={20} height={20} alt="IA"/> Bônus especial: desconto exclusivo na compra do ingresso para o Amazon IA Summit, nos dias 1 e 2 de dezembro, no Centro de Convenções Vasco Vasques</div>
             <div className="border-t-1 border-white/30 pt-5 mt-5">
               <h3 className="text-[var(--azul-neon)] font-bold text-xl">12x de <span className="text-4xl">R$134,14</span><span className="font-normal text-white"> ou R$1.297,00 à vista</span></h3>
             </div>
