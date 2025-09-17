@@ -184,7 +184,8 @@ export default function Programacao() {
                     <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
                         <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>
                         <span className="bg-[var(--azul-neon)] rounded-full text-sm px-3 py-1 mt-5 mb-4 inline-block">15h44 – 16h14</span>
-                        <p className="text-white font-bold text-sm">Q&A com CEO Grupo Digital</p>
+                        <p className="text-white font-bold text-sm mb-2">Q&A com CEO Grupo Digital</p>
+                        <p className="font-bold text-[var(--azul-neon)] uppercase">Antônio Lima Júnior</p>
                     </div>
                     <div className="bg-[#2767702B] px-5 py-10 rounded-lg">
                         <Image src={"/asteristico-azul.svg"} width={30} height={30} alt="Viver de IA"/>

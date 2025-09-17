@@ -417,7 +417,7 @@ export default function Home() {
       </div>
 
       {/*section 7 programacao*/}
-      <div className="max-w-[var(--largura)] mx-auto px-5 relative mt-20">
+      <div className="max-w-[var(--largura)] mx-auto px-5 relative mt-20 hidden">
         <h3 className="max-w-[500px] mx-auto text-[var(--azul-neon)] text-center font-bold text-2xl mb-10">Dois dias completo de aprendizado intensivo com conteúdo 100% prático</h3>
         <div className="px-8 py-1 text-white text-sm mx-auto mb-8 table bg-[linear-gradient(90deg,_rgba(39,103,112,0.38)_0%,_rgba(0,255,255,0.38)_100%)] rounded-full text-center">
           Dia 18/10
