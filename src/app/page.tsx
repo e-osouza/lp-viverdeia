@@ -37,7 +37,7 @@ const faqData = [
     id: 5,
     question: "5. Quem são os palestrantes?",
     answer:
-      "Rafael Milagre: Diretor de IA na Nalk, professor da ESPM, mentor no G4 AI Academy e fundador do Viver de IA. Yago Martins: Fundador e CEO da Nalk, ex-oficial do Exército, mentor na G4 Educação e vencedor do prêmio Founder do Ano — Growth Awards 2024.",
+      "Rafael Milagre: Diretor de IA na Nalk, professor da ESPM, mentor no G4 AI Academy e fundador do Viver de IA. Yago Martins: Fundador e CEO da Nalk, ex-oficial do Exército, mentor no G4 Educação e vencedor do prêmio Founder do Ano — Growth Awards 2024.",
   },
   {
     id: 6,
@@ -358,7 +358,7 @@ export default function Home() {
             <ul className="text-white list-disc ml-5">
               <li>Fundador e CEO da Nalk</li>
               <li>Ex-oficial do Exército</li>
-              <li>Mentor na G4 Educação</li>
+              <li>Mentor no G4 Educação</li>
               <li>Founder Premiado</li>
             </ul>
             <p className="text-white my-5">Yago é referência em growth, dados e vendas com IA. Como produtor de conteúdo, inspira milhares de profissionais a transformarem seus negócios com IA e hoje lidera a construção do maior ecossistema de educação e soluções práticas de IA para empresários e gestores do Brasil.</p>
