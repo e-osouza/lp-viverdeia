@@ -327,7 +327,7 @@ export default function Home() {
             <ul className="text-white list-disc ml-5">
               <li>Fundador do VIVER DE IA</li>
               <li>Diretor de IA na Nalk</li>
-              <li>Mentor no programa G4 AI Academy da G4 Educação</li>
+              <li>Mentor no programa G4 AI Academy do G4 Educação</li>
               <li>Professor de Inteligência Artificial na ESPM</li>
             </ul>
             <p className="text-white my-5">Rafael possui formação em soluções no-code para agentes inteligentes em marketing, vendas, RH e operações. Ele já ajudou empresas e alunos a conquistarem contratos de cinco dígitos com aplicações práticas de inteligência artificial.</p>
